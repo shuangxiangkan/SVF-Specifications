@@ -1,75 +1,53 @@
-## News
-* <b>SVF now supports LLVM-13.0.0 (Thank [Shengjie Xu](https://github.com/xushengj) for his help!). </b>
-* <b>[Object clustering](https://github.com/SVF-tools/SVF/wiki/Object-Clustering) published in our [OOPSLA paper](https://yuleisui.github.io/publications/oopsla21.pdf) is now available in SVF </b>
-* <b>[Hash-Consed Points-To Sets](https://github.com/SVF-tools/SVF/wiki/Hash-Consed-Points-To-Sets) published in our [SAS paper](https://yuleisui.github.io/publications/sas21.pdf) is now available in SVF </b>
-* <b> Learning or teaching Software Analysis? Check out [SVF-Teaching](https://github.com/SVF-tools/SVF-Teaching)! </b>
-* <b>SVF now supports LLVM-12.0.0 (Thank [Xiyu Yang](https://github.com/sherlly/) for her help!). </b>
-* <b>[VSFS](https://github.com/SVF-tools/SVF/wiki/VSFS) published in our [CGO paper](https://yuleisui.github.io/publications/cgo21.pdf) is now available in SVF </b>
-* <b>[TypeClone](https://github.com/SVF-tools/SVF/wiki/TypeClone) published in our [ECOOP paper](https://yuleisui.github.io/publications/ecoop20.pdf) is now available in SVF </b>
-* <b>SVF now uses a single script for its build. Just type [`source ./build.sh`](https://github.com/SVF-tools/SVF/blob/master/build.sh) in your terminal, that's it!</b>
-* <b>SVF now supports LLVM-10.0.0! </b>
-* <b>We thank [bsauce](https://github.com/bsauce) for writing a user manual of SVF ([link1](https://www.jianshu.com/p/068a08ec749c) and [link2](https://www.jianshu.com/p/777c30d4240e)) in Chinese </b>
-* <b>SVF now supports LLVM-9.0.0 (Thank [Byoungyoung Lee](https://github.com/SVF-tools/SVF/issues/142) for his help!). </b>
-* <b>SVF now supports a set of [field-sensitive pointer analyses](https://yuleisui.github.io/publications/sas2019a.pdf). </b>
-* <b>[Use SVF as an external lib](https://github.com/SVF-tools/SVF/wiki/Using-SVF-as-a-lib-in-your-own-tool) for your own project (Contributed by [Hongxu Chen](https://github.com/HongxuChen)). </b>
-* <b>SVF now supports LLVM-7.0.0. </b>
-* <b>SVF now supports Docker. [Try SVF in Docker](https://github.com/SVF-tools/SVF/wiki/Try-SVF-in-Docker)! </b>
-* <b>SVF now supports [LLVM-6.0.0](https://github.com/svf-tools/SVF/pull/38) (Contributed by [Jack Anthony](https://github.com/jackanth)). </b>
-* <b>SVF now supports [LLVM-4.0.0](https://github.com/svf-tools/SVF/pull/23) (Contributed by Jared Carlson. Thank [Jared](https://github.com/jcarlson23) and [Will](https://github.com/dtzWill) for their in-depth [discussions](https://github.com/svf-tools/SVF/pull/18) about updating SVF!) </b>
-* <b>SVF now supports analysis for C++ programs.</b>
-<br />
+## Modified files
+### main files
+* <b>[include/Util/ExtAPI.h](https://github.com/shuangxiangkan/SVF-Summary/blob/master/include/Util/ExtAPI.h)</b> 
+* <b>[lib/Util/ExtAPI.cpp](https://github.com/shuangxiangkan/SVF-Summary/blob/master/lib/Util/ExtAPI.cpp)</b> 
+* <b>[include/SVF-FE/SVFIRBuilder.h](https://github.com/shuangxiangkan/SVF-Summary/blob/master/include/SVF-FE/SVFIRBuilder.h)</b> 
+* <b>[lib/SVF-FE/SVFIRBuilder.cpp](https://github.com/shuangxiangkan/SVF-Summary/blob/master/lib/SVF-FE/SVFIRBuilder.cpp##L1084-L1429)</b>
+* <b>[include/SVF-FE/LLVMUtil.h](https://github.com/shuangxiangkan/SVF-Summary/blob/master/include/SVF-FE/LLVMUtil.h)</b>
+* <b>[include/MTA/LockResultValidator.h](https://github.com/shuangxiangkan/SVF-Summary/blob/master/include/MTA/LockResultValidator.h#L65-L66)</b>
+* <b>[include/MTA/MTAAnnotator.h](https://github.com/shuangxiangkan/SVF-Summary/blob/master/include/MTA/MTAAnnotator.h#L81-L82)</b>
+* <b>[include/MTA/MTAResultValidator.h](https://github.com/shuangxiangkan/SVF-Summary/blob/master/include/MTA/MTAResultValidator.h#L415-L416)</b>
+### configuration files 
 
-## Documentation
+* <b>[CMakeLists.txt](https://github.com/shuangxiangkan/SVF-Summary/blob/master/CMakeLists.txt#L6)</b>
+* <b>[lib/CMakeLists.txt](https://github.com/shuangxiangkan/SVF-Summary/blob/master/lib/CMakeLists.txt#L17)</b>
+* <b>[include/SVF-FE/config.h](https://github.com/shuangxiangkan/SVF-Summary/blob/master/include/SVF-FE/config.h)</b>
+* <b>[include/SVF-FE/config.h.in](https://github.com/shuangxiangkan/SVF-Summary/blob/master/include/SVF-FE/config.h.in)</b>
 
-If you want to build the documentation yourself go into doc and invoke doxygen:
+#### <b>config.h</b>和<b>config.h.in</b>是由CMakeLists.txt自动生成是生成SVF的绝对路径。
+
+### cJSON
+
+* <b>[include/Util/cJSON.h](https://github.com/shuangxiangkan/SVF-Summary/blob/master/include/Util/cJSON.h#)</b>
+* <b>[lib/Util/cJSON.c](https://github.com/shuangxiangkan/SVF-Summary/blob/master/lib/Util/cJSON.c#)</b>
+* <b>[LICENSE](https://github.com/shuangxiangkan/SVF-Summary/blob/master/LICENSE#)</b>
+
+#### [cJSON](https://www.jb51.net/article/236576.htm)是一个使用C语言编写的JSON数据解析器，具有超轻便，可移植，单文件的特点，使用MIT开源协议。本项目使用cJSON来解析.json文件。
+
+### Test cases of summary 
+* <b>[Test-Cases/src](https://github.com/shuangxiangkan/SVF-Summary/tree/master/Test-Cases/src)</b>
+
+#### <b>Test-Cases/src</b> 是之前写的测试用例。
+
+### ExtAPI.json 
+* <b>[ExtAPI.json](https://github.com/shuangxiangkan/SVF-Summary/tree/master/ExtAPI.json)</b>
+  
+#### <b>ExtAPI.json</b> 存放extern functions的specifications。
+
+#### 修改完上述文件后，需要重新编译SVF, 在SVF的根目录下执行以下命令：
 ```
-cd doc && doxygen doxygen.config
+./build.sh
 ```
-
-#### We are looking for self-motivated PhD students and we welcome industry collaboration/sponsorship to improve SVF (Please contact yulei.sui@uts.edu.au if you are interested)
-
-
-<br />
-<br />
-<br />
-SVF is a source code analysis tool that enables interprocedural dependence analysis for LLVM-based languages. SVF is able to perform pointer alias analysis, memory SSA form construction, value-flow tracking for program variables and memory error checking. 
-<br />
-<br />
-
-| About SVF       | Setup  Guide         | User Guide  | Developer Guide  |
-| ------------- |:-------------:| -----:|-----:|
-| ![About](https://github.com/svf-tools/SVF/blob/master/images/help.png?raw=true)| ![Setup](https://github.com/svf-tools/SVF/blob/master/images/tools.png?raw=true)  | ![User](https://github.com/svf-tools/SVF/blob/master/images/users.png?raw=true)  |  ![Developer](https://github.com/svf-tools/SVF/blob/master/images/database.png?raw=true) 
-| Introducing SVF -- [what it does](https://github.com/svf-tools/SVF/wiki/About#what-is-svf) and [how we design it](https://github.com/svf-tools/SVF/wiki/SVF-Design#svf-design)      | A step by step [setup guide](https://github.com/svf-tools/SVF/wiki/Setup-Guide#getting-started) to build SVF | Command-line options to [run SVF](https://github.com/svf-tools/SVF/wiki/User-Guide#quick-start), get [analysis outputs](https://github.com/svf-tools/SVF/wiki/User-Guide#analysis-outputs), and test SVF with [an example](https://github.com/svf-tools/SVF/wiki/Analyze-a-Simple-C-Program) or [PTABen](https://github.com/SVF-tools/PTABen) | Detailed [technical documentation](https://github.com/svf-tools/SVF/wiki/Technical-documentation) and how to [write your own analyses](https://github.com/svf-tools/SVF/wiki/Write-your-own-analysis-in-SVF) in SVF or [use SVF as a lib](https://github.com/SVF-tools/SVF-example) for your tool  |
-
-
-<br />
-<br />
-<p>We release SVF source code in the hope of benefiting others. You are kindly asked to acknowledge usage of the tool by citing some of our publications listed http://svf-tools.github.io/SVF, especially the following two: </p>
-
+#### 或者执行/Debug-build（或/Release-build）下面执行make命令：
 ```
-@inproceedings{sui2016svf,
-  title={SVF: interprocedural static value-flow analysis in LLVM},
-  author={Sui, Yulei and Xue, Jingling},
-  booktitle={Proceedings of the 25th international conference on compiler construction},
-  pages={265--266},
-  year={2016},
-  organization={ACM}
-}
+make
 ```
+### Possible problems
 
-```
-@article{sui2014detecting,
-  title={Detecting memory leaks statically with full-sparse value-flow analysis},
-  author={Sui, Yulei and Ye, Ding and Xue, Jingling},
-  journal={IEEE Transactions on Software Engineering},
-  volume={40},
-  number={2},
-  pages={107--122},
-  year={2014},
-  publisher={IEEE}
-}
-```
+#### 1. 因为SVF在每台电脑上的安装位置不一样，SVF在安装的时候好像其位置也没有设为全局环境变量,所以在定位<b>[ExtAPI.json](https://github.com/shuangxiangkan/SVF-Summary/blob/master/lib/Util/ExtAPI.cpp#L73-L74)</b>的时候可能会出问题。我修改了<b>CMakeLists.txt</b>，并生成了<b>config.h</b>和<b>config.h.in</b>这两个文件，是否存在不修改CMakeLists.txt文件的方法来定位<b>ExtAPI.json</b>文件。
 
+#### 2. 之前写的几十个测试用例，不知道是否足够。
 
-
+#### 3. 两个extern functions: <b>dlsym</b> 和 <b>_ZSt29_Rb_tree_insert_and_rebalancebPSt18_Rb_tree_node_baseS0_RS_</b> 不太好处理，因此专门写了两个专门的enum变量对应这两个函数 <b>EXT_FUNPTR</b> 和 <b>EXT_COMPLEX</b>，能否将这两个函数分解到其他定义（如EXT_ADDR、EXT_COPY, EXT_LOAD等）的操作中。
 
